@@ -3,9 +3,18 @@ import 'hero.dart';
 void main() {
   final hero = Hero('슈퍼맨', 10);
 
+  Hero hero2 = Hero('슈퍼맨', 10);
+  int i = 10;
+  double d = 10.0;
+  bool e = true;
+
   final Car car = Car();
 
+  // 영수 : O
   Door door = Door();
+
+  // 철수 : X
+  door = Door();
 
   // 기본 자료형
   // int, double, bool, String

@@ -6,3 +6,11 @@ class Slime {
 
   void attack() {}
 }
+
+void main() {
+  Slime slime1 = Slime(100); // 1
+  Slime slime2 = Slime(100); // 2
+
+  // true: O, false: X
+  print(slime1 == slime2);
+}
