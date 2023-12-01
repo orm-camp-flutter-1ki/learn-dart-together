@@ -4,7 +4,7 @@ void main() {
   Cleric cleric = Cleric("yj");
   print("${cleric.name}의 HP: ${cleric.hp}, MP: ${cleric.mp}");
 
-  cleric.mp = 9;
+  cleric.mp = 10;
 
   int sec = 3;
   int recoveryMp = cleric.pray(sec);
@@ -18,10 +18,11 @@ void main() {
 
 class Cleric {
   String name;
-  int hp = 50;
   final int maxHP = 50;
-  int mp = 10;
   final int maxMP = 10;
+
+  int hp = 50;
+  int mp = 10;
 
   Cleric(this.name);
 
@@ -34,21 +35,64 @@ class Cleric {
 
   int pray(int sec) {
     Random random = Random();
-    mp += sec + random.nextInt(3);
+    // mp += sec + random.nextInt(3);
 
-    // 조건 => true or false
-    // 3항연산
-    bool isOverMp = mp > maxMP;
-    mp = isOverMp ? ((maxMP % 2 == 0) ? maxMP : maxMP - 2) : mp;
+    final int beforeMp = mp;
+
+    final int recoveryMp = sec + random.nextInt(3);
+    // mp = mp + recoveryMp;
+    mp += recoveryMp;
 
     if (mp > maxMP) {
       mp = maxMP;
     }
 
-    int a = 10;
-    int b = 20;
-    mp += (sec > 0) ? a : b;
+    final int realRecoveryMp = mp - beforeMp;
 
-    return mp;
+    return realRecoveryMp;
   }
+
+  // int pray(int sec) {
+  //   print('$name 은(는) pray 를 시전 하였다.');
+  //
+  //   if (sec == 0) {
+  //     print('그러나 정성이 부족 하였다.');
+  //     return 0;
+  //   }
+  //
+  //   int ret = (Random().nextInt(3) + sec);
+  //   if (MAX_OF_MP < ret) {
+  //     ret = MAX_OF_MP;
+  //   }
+  //
+  //   mp += ret;
+  //
+  //   if (MAX_OF_MP < mp) {
+  //     mp = MAX_OF_MP;
+  //   }
+  //
+  //   print('$name 은(는) $sec 초의 기도 끝에 $ret 만큼 MP 를 회복 하였다. 현재 mp $mp');
+  //
+  //   return ret;
+  // }
 }
+
+void aaa() {}
+
+void bbb(int a) {}
+
+int ccc() => 1;
+
+// f(x) = 2 * x
+int x = 10;
+int y = plusTwo(x);
+
+// block body, expression body 전환 가능
+int plusTwo(int x) {
+  return 2 + x;
+}
+
+// lambda expression : 람다식
+// expression body 전환 가능
+// 화살표 표기법
+int plusTwo2(int x) => 2 + x;
