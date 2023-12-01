@@ -11,4 +11,15 @@ class Cleric {
   int mp = 10;
 
   Cleric(this.name);
+
+  // 성직자는 “셀프 에이드" 라는 마법을 사용할 수 있고, MP를 5소비하는 것으로 자신의 HP 를 최대 HP 까지 회복할 수 있다.
+  void selfAid() {
+    // 끝나는 조건
+    if (mp < 5) {
+      return;
+    }
+
+    mp = mp - 5; // mp -= 5
+    hp = maxHp;
+  }
 }
