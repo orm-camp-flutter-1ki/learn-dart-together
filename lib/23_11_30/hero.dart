@@ -1,3 +1,5 @@
+int heroMoney = 100;
+
 class Hero {
   String name;
   int hp;
