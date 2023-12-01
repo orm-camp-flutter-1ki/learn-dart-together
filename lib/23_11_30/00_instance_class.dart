@@ -1,9 +1,9 @@
 import '../game/hero.dart';
 
 void main() {
-  final hero = Hero('슈퍼맨', 10);
+  final hero = Hero(name: '슈퍼맨', hp: 10);
 
-  Hero hero2 = Hero('슈퍼맨', 10);
+  Hero hero2 = Hero(name: '슈퍼맨', hp: 10);
   int i = 10;
   double d = 10.0;
   bool e = true;

@@ -46,3 +46,12 @@ class Cleric {
     return beforeMp - mp;
   }
 }
+
+void main() {
+  // 1 ~ 39
+  List<int> numbers = List.generate(38, (index) => index + 1);
+
+  numbers.shuffle();
+
+  print(numbers);
+}
