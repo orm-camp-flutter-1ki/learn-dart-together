@@ -1,4 +1,4 @@
-import 'hero.dart';
+import '../game/hero.dart';
 
 void main() {
   final hero = Hero('슈퍼맨', 10);
