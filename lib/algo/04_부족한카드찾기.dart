@@ -1,5 +1,5 @@
 void main() {
-  print(solution2([1, 3, 2, 5]));
+  print(solution4([1, 3, 2, 5]));
 }
 
 int solution(List<int> cards) {
@@ -26,4 +26,21 @@ int solution2(List<int> cards) {
   }
 
   return result;
+}
+
+int solution3(List<int> cards) {
+  int sum = 0;
+  for (var value in cards) {
+    sum += value;
+  }
+
+  return (1 + 2 + 3 + 4 + 5) - sum;
+}
+
+int solution4(List<int> cards) {
+  // (1, 2), 3, 4
+  // (3, 3), 4
+  // (6, 4)
+  // 10
+  return 15 - cards.reduce((value, element) => value + element);
 }
