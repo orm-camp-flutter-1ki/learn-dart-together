@@ -20,6 +20,7 @@ class Hero {
   }) : _hp = hp;
 
   // getter
+  // 프로퍼티
   int get hp => _hp;
 
   set hp(int value) {
@@ -51,6 +52,9 @@ void main() {
   print(Hero.money);
 
   final hero = Hero(hp: 100);
+  hero.name = 'aa';
+  print(hero.hp);
+  hero.hp = 100;
 
   // final fireSword = Sword(name: 'bbb', damage: 10);
   //
