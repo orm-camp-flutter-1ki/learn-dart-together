@@ -4,7 +4,9 @@ class Slime {
 
   Slime(this.hp);
 
-  void attack() {}
+  void attack() {
+    final person = _Person();
+  }
 }
 
 void main() {
@@ -14,3 +16,5 @@ void main() {
   // true: O, false: X
   print(slime1 == slime2);
 }
+
+class _Person {}

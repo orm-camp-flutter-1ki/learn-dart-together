@@ -14,17 +14,27 @@ void main() {
 
   cleric.selfAid();
   print("selfAid 이후 ${cleric.name}의 HP: ${cleric.hp}, MP: ${cleric.mp}");
+
+  Cleric('아서스', hp: 40, mp: 5);
+  Cleric('아서스', hp: 40);
+  Cleric('아서스');
 }
 
-class Cleric {
-  String name;
-  final int maxHP = 50;
-  final int maxMP = 10;
+const int maxMP = 10;
+const int maxHP = 50;
 
+class Cleric {
+  static const int MAX_OF_HP = 50;
+
+  String name;
   int hp = 50;
   int mp = 10;
 
-  Cleric(this.name);
+  Cleric(
+    this.name, {
+    this.hp = maxHP,
+    this.mp = maxMP,
+  });
 
   void selfAid() {
     if (mp >= 5) {
@@ -52,29 +62,29 @@ class Cleric {
     return realRecoveryMp;
   }
 
-  // int pray(int sec) {
-  //   print('$name 은(는) pray 를 시전 하였다.');
-  //
-  //   if (sec == 0) {
-  //     print('그러나 정성이 부족 하였다.');
-  //     return 0;
-  //   }
-  //
-  //   int ret = (Random().nextInt(3) + sec);
-  //   if (MAX_OF_MP < ret) {
-  //     ret = MAX_OF_MP;
-  //   }
-  //
-  //   mp += ret;
-  //
-  //   if (MAX_OF_MP < mp) {
-  //     mp = MAX_OF_MP;
-  //   }
-  //
-  //   print('$name 은(는) $sec 초의 기도 끝에 $ret 만큼 MP 를 회복 하였다. 현재 mp $mp');
-  //
-  //   return ret;
-  // }
+// int pray(int sec) {
+//   print('$name 은(는) pray 를 시전 하였다.');
+//
+//   if (sec == 0) {
+//     print('그러나 정성이 부족 하였다.');
+//     return 0;
+//   }
+//
+//   int ret = (Random().nextInt(3) + sec);
+//   if (MAX_OF_MP < ret) {
+//     ret = MAX_OF_MP;
+//   }
+//
+//   mp += ret;
+//
+//   if (MAX_OF_MP < mp) {
+//     mp = MAX_OF_MP;
+//   }
+//
+//   print('$name 은(는) $sec 초의 기도 끝에 $ret 만큼 MP 를 회복 하였다. 현재 mp $mp');
+//
+//   return ret;
+// }
 }
 
 void aaa() {}

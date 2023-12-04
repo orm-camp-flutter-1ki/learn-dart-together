@@ -4,6 +4,8 @@
 // 최대 HP와 최대 MP는 상수 필드로 선언 하시오.
 import 'dart:math';
 
+import 'hero.dart';
+
 class Cleric {
   final int maxHp = 50;
   final int maxMp = 10;
@@ -54,4 +56,8 @@ void main() {
   numbers.shuffle();
 
   print(numbers);
+
+  final hero = Hero(hp: 100);
+  print(hero.hp);
+  hero.hp = 100;
 }
