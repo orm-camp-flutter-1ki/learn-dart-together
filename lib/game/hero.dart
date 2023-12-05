@@ -1,10 +1,13 @@
 import 'dart:math';
 
+import 'package:learn_dart_together/game/slime.dart';
+
 import 'sword.dart';
 
 class Hero {
   // 공통의 돈
   static int money = 100;
+
   static void moneyRandom() {
     Hero.money = Random().nextInt(1000);
   }
@@ -14,10 +17,12 @@ class Hero {
   Sword? sword;
 
   Hero({
-    this.name = '홍길동',
+    required this.name,
     required int hp,
     this.sword,
-  }) : _hp = hp;
+  }) : _hp = hp {
+    print('1. Hero 생성자');
+  }
 
   // getter
   // 프로퍼티
@@ -43,15 +48,20 @@ class Hero {
 
   // 메서드 : 클래스내에서 클래스를 위한 동작을 하는 함수
   // 함수 : 클래스랑 상관 없이 독자적으로 실행되는 함수
-  void attack() {}
+  void attack(Slime slime) {
+    slime.hp -= 10;
+    print('10의 데미지!!!');
+  }
 
-  void run() {}
+  void run() {
+    print('뛰었다');
+  }
 }
 
 void main() {
   print(Hero.money);
 
-  final hero = Hero(hp: 100);
+  final hero = Hero(name: '용사', hp: 100);
   hero.name = 'aa';
   print(hero.hp);
   hero.hp = 100;

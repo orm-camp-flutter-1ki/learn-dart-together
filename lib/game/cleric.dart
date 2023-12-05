@@ -57,7 +57,7 @@ void main() {
 
   print(numbers);
 
-  final hero = Hero(hp: 100);
+  final hero = Hero(hp: 100, name: '용사');
   print(hero.hp);
   hero.hp = 100;
 }
