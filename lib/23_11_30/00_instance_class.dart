@@ -6,7 +6,6 @@ void main() {
   Hero hero2 = Hero(name: '슈퍼맨', hp: 10);
   int i = 10;
   double d = 10.0;
-  bool e = true;
 
   final Car car = Car();
 

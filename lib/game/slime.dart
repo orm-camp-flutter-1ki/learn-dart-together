@@ -1,4 +1,6 @@
-class Slime {
+import 'package:learn_dart_together/game/monster.dart';
+
+class Slime extends Monster {
   int hp;
   final int level = 10;
 
@@ -7,14 +9,19 @@ class Slime {
   void attack() {
     final person = _Person();
   }
+
+  @override
+  void run() {
+    print('222222222222');
+  }
 }
 
 void main() {
   Slime slime1 = Slime(100); // 1
-  Slime slime2 = Slime(100); // 2
+  Monster slime2 = Slime(100); // 2
 
-  // true: O, false: X
-  print(slime1 == slime2);
+  slime1.run();
+  slime2.run();
 }
 
 class _Person {}

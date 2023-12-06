@@ -1,10 +1,13 @@
 import 'dart:math';
 
+import 'package:learn_dart_together/game/dancer.dart';
+import 'package:learn_dart_together/game/goblin.dart';
+import 'package:learn_dart_together/game/monster.dart';
 import 'package:learn_dart_together/game/slime.dart';
 
 import 'sword.dart';
 
-class Hero {
+class Hero implements Speakable {
   // 공통의 돈
   static int money = 100;
 
@@ -48,13 +51,18 @@ class Hero {
 
   // 메서드 : 클래스내에서 클래스를 위한 동작을 하는 함수
   // 함수 : 클래스랑 상관 없이 독자적으로 실행되는 함수
-  void attack(Slime slime) {
-    slime.hp -= 10;
+  void attack(Monster monster) {
+    monster.hp -= 10;
     print('10의 데미지!!!');
   }
 
   void run() {
     print('뛰었다');
+  }
+
+  @override
+  void speak() {
+    // TODO: implement speak
   }
 }
 
@@ -62,6 +70,14 @@ void main() {
   print(Hero.money);
 
   final hero = Hero(name: '용사', hp: 100);
+
+  // 둘 다 Monster
+  Slime slime = Slime(100);
+  Goblin goblin = Goblin();
+
+  hero.attack(slime);
+  hero.attack(goblin);
+
   hero.name = 'aa';
   print(hero.hp);
   hero.hp = 100;

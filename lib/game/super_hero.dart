@@ -1,3 +1,5 @@
+import 'package:learn_dart_together/game/monster.dart';
+
 import 'hero.dart';
 import 'slime.dart';
 
@@ -27,7 +29,7 @@ class SuperHero extends Hero {
   }
 
   @override
-  void attack(Slime slime) {
+  void attack(Monster slime) {
     print('준비를 취했다');
 
     super.attack(slime);

@@ -1,3 +1,13 @@
+void main() {
+  Thing book = Book(
+    name: 'name',
+    price: 1,
+    color: 'color',
+    isbn: 'isbn',
+    weight: 1,
+  );
+}
+
 class Book extends TangibleAsset {
   String isbn;
 
