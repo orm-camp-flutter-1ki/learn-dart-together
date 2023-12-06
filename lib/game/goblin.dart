@@ -1,5 +1,4 @@
 import 'package:learn_dart_together/game/dancer.dart';
-import 'package:learn_dart_together/game/hero.dart';
 import 'package:learn_dart_together/game/monster.dart';
 
 class Goblin extends Monster implements Speakable {
@@ -10,15 +9,16 @@ class Goblin extends Monster implements Speakable {
 }
 
 void main() {
-  List<Speakable> items = [
-    Goblin(),
-    Hero(name: 'name', hp: 100),
-  ];
+  double d = 10.0;
+  int i = 20;
+  num n = 10.0;
 
-  List<Human> humans = [
-    Student(),
-    Teacher(),
-  ];
+  n = i;
+  n = d;
+
+  d = i.toDouble();
+
+  i = d.toInt();
 }
 
 abstract interface class Human {}
