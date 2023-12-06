@@ -1,0 +1,25 @@
+@startuml AssetManagement
+
+scale 2
+
+class Book {
+  String name
+  int price
+
+  void aaa()
+}
+class Computer
+abstract class TangibleAsset
+abstract class Asset
+interface Thing
+
+' TangibleAsset <|-- Book
+' TangibleAsset <|-- Computer
+' Asset <|-- TangibleAsset
+' Thing <|.. TangibleAsset
+
+class Computer extends TangibleAsset
+class Book extends TangibleAsset
+abstract class TangibleAsset extends Asset implements Thing
+
+@enduml
