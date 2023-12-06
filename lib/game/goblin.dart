@@ -12,6 +12,7 @@ void main() {
   double d = 10.0;
   int i = 20;
   num n = 10.0;
+  String s = '0';
 
   n = i;
   n = d;
@@ -19,6 +20,11 @@ void main() {
   d = i.toDouble();
 
   i = d.toInt();
+
+  print(10.isEven);
+
+  // 정수 / 정수
+  print(4 / 2);
 }
 
 abstract interface class Human {}

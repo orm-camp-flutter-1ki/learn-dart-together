@@ -41,7 +41,7 @@ class SuperHero extends Hero {
 }
 
 void main() {
-  final slime = Slime(100);
+  final slime = Slime('100');
 
   final hero = Hero(name: '홍길동', hp: 50);
   hero.run();

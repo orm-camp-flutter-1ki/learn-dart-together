@@ -72,7 +72,7 @@ void main() {
   final hero = Hero(name: '용사', hp: 100);
 
   // 둘 다 Monster
-  Slime slime = Slime(100);
+  Slime slime = Slime('100');
   Goblin goblin = Goblin();
 
   hero.attack(slime);

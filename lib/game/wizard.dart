@@ -6,7 +6,7 @@ void main() {
   Wizard wizard = Wizard('마법사', 100);
   Character character = wizard;
 
-  Slime slime = Slime(100);
+  Slime slime = Slime('100');
 
   wizard.fireball(slime);
 
