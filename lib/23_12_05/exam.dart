@@ -6,6 +6,9 @@ void main() {
     isbn: 'isbn',
     weight: 1,
   );
+
+  book.weight = 100;
+  print(book.weight);
 }
 
 class Book extends TangibleAsset {
@@ -35,25 +38,15 @@ class Computer extends TangibleAsset {
 abstract class TangibleAsset extends Asset implements Thing {
   String color;
 
-  // @override
-  // double weight;
-
-  double _weight;
+  @override
+  double weight;
 
   TangibleAsset({
     required super.name,
     required super.price,
     required this.color,
-    required double weight,
-  }) : _weight = weight;
-
-  @override
-  double get weight => _weight;
-
-  @override
-  set weight(double value) {
-    _weight = value;
-  }
+    required this.weight,
+  });
 }
 
 abstract class Asset {

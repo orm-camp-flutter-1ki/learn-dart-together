@@ -64,6 +64,19 @@ class Hero implements Speakable {
   void speak() {
     // TODO: implement speak
   }
+
+  @override
+  String toString() {
+    return 'Hero{name: $name, _hp: $_hp, sword: $sword}';
+  }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Hero && runtimeType == other.runtimeType && name == other.name;
+
+  @override
+  int get hashCode => name.hashCode;
 }
 
 void main() {
