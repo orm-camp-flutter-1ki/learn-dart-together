@@ -1,9 +1,9 @@
 void main() {
-  print(Person('a', 10) == Person('a', 10));
+  print(Person(name: 'a', age: 10) == Person(name: 'a', age: 10));
 
-  final p1 = Person('a', 10);
+  final p1 = Person(name: 'a', age: 10);
 
-  final clone = Person(p1.name, p1.age);
+  final clone = Person(name: p1.name, age: p1.age);
 
   print(p1 == clone);
 
