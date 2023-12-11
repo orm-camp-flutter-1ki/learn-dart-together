@@ -22,7 +22,10 @@ void main() {
   print(user2.toJson());
 
   File file = File('user.txt');
-  // file.writeAsStringSync(jsonEncode(user2.toJson()));
+  file.writeAsStringSync(jsonEncode(user2.toJson()));
+
+  // append 모드
+  file.writeAsStringSync(jsonEncode(user2.toJson()), mode: FileMode.append);
 
   String userJson = file.readAsStringSync();
   print(userJson);
@@ -59,6 +62,12 @@ class User {
       age: map['age'] ?? 0,
     );
   }
+
+  // User.fromJson(Map<String, dynamic> map) {
+  //   name = map['name'];
+  //   email = map['email'];
+  //   age = map['age'];
+  // }
 
   @override
   String toString() {
