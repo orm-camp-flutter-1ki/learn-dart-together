@@ -1,3 +1,5 @@
+import 'package:collection/collection.dart';
+
 class Trader {
   String name;
   String city;
@@ -24,12 +26,35 @@ var transactions = [
 
 void main() {
   // 1. 2011년에 일어난 모든 트랜잭션을 찾아 가격 기준 오름차순으로 정리하여 이름을 나열하시오
-  transactions
-      .where((e) => e.year == 2011)
-      .toList()
-      .sort((a, b) => a.value.compareTo(b.value));
+  print(transactions.where((e) => e.year == 2011)
+        .sorted((a, b) => a.value.compareTo(b.value))
+        .map((e) => e.trader.name)
+        .toSet()
+        .toList()
+        .length);
 
-  transactions.map((e) => e.trader.name).toSet().toList().forEach((e) {
-    print(e);
-  });
+
+
+  final result = transactions
+      .where((e) => e.year == 2011)
+      .toList();
+  // print(transactions.where((e) => e.year == 2011).toList().length);
+
+  // print(transactions.map((e) => e.trader.name).toSet().toList());
+
+
+  final person = Person();
+
+  ((person
+      ..hello())..bye());
+}
+
+class Person {
+  void hello() {
+
+  }
+
+  void bye() {
+
+  }
 }
