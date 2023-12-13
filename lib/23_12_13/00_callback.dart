@@ -38,4 +38,8 @@ void main() {
   myFunc(() {
     print('벨 울림!!');
   });
+
+  int Function(int, int) addFunction = add;
+  print(addFunction.call(1, 20));   // 명시적 호출
+  print(addFunction(1, 20));    // 암묵적 호출
 }
