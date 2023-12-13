@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:collection/collection.dart';
 
 class Trader {
@@ -33,11 +35,20 @@ void main() {
         .toList()
         .length);
 
+  // sexy
+  print(transactions.map((e) => e.value).max);
+
+  // 복고
+  print(transactions.map((e) => e.value).reduce(max));
+
 
 
   final result = transactions
       .where((e) => e.year == 2011)
-      .toList();
+      .map((e) => e.value)
+      .max;
+
+  final maxNum = max(10, 20);
   // print(transactions.where((e) => e.year == 2011).toList().length);
 
   // print(transactions.map((e) => e.trader.name).toSet().toList());
