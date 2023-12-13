@@ -27,7 +27,7 @@ void myFunc(void Function() onTap) {
   onTap();
 }
 
-void main() {
+Future<void> main() async {
   // 덧셈 함수를 고계함수...
   performOperation(5, 3, (a, b) => a * b);
 
@@ -40,6 +40,37 @@ void main() {
   });
 
   int Function(int, int) addFunction = add;
-  print(addFunction.call(1, 20));   // 명시적 호출
-  print(addFunction(1, 20));    // 암묵적 호출
+  print(addFunction.call(1, 20)); // 명시적 호출
+  print(addFunction(1, 20)); // 암묵적 호출
+
+  // Future.delayed(Duration(seconds: 5));
+
+  print('끝');
+
+  // myFunction();
+
+  saveDb('유저 데이터').then((_) {
+    print('진짜 끝!!!!!!!!!!!!!!!!!!!!!!1111');
+  });
+
+}
+
+// 오래 걸릴꺼야
+Future<void> saveDb(user) async {
+  print('DB 저장 시작');
+
+  // 오래 걸리는 애
+  await Future.delayed(Duration(seconds: 2));
+
+  print('DB 저장 끝');
+}
+
+void myFunction() {
+  print('start');
+
+  Future.delayed(Duration(seconds: 2), () {
+    print('2 sec');
+  });
+
+  print('end');
 }
