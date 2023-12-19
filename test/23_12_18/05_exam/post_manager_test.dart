@@ -70,6 +70,8 @@ void main() {
       final repository = PostMemoryRepositoryImpl();
       final postManager = PostManager(repository);
 
+      await Future.delayed(Duration(seconds: 1));
+
       await postManager.addPost(Post(userId: 1, id: 1, title: 'title', body: 'body'));
       await postManager.addPost(Post(userId: 1, id: 2, title: 'title2', body: 'body2'));
 
@@ -90,6 +92,8 @@ void main() {
       final repository = PostFileRepositoryImpl();
       final postManager = PostManager(repository);
 
+      await Future.delayed(Duration(seconds: 1));
+
       await postManager.addPost(Post(userId: 1, id: 1, title: 'title', body: 'body'));
       await postManager.addPost(Post(userId: 1, id: 2, title: 'title2', body: 'body2'));
 
@@ -104,6 +108,8 @@ void main() {
     test('Post Manager update Test', () async {
       final repository = PostFileRepositoryImpl();
       final postManager = PostManager(repository);
+
+      await Future.delayed(Duration(seconds: 1));
 
       await postManager.addPost(Post(userId: 1, id: 1, title: 'title', body: 'body'));
       await postManager.addPost(Post(userId: 1, id: 2, title: 'title2', body: 'body2'));
@@ -127,6 +133,8 @@ void main() {
       final repository = PostFileRepositoryImpl();
       final postManager = PostManager(repository);
 
+      await Future.delayed(Duration(seconds: 1));
+
       final deletePost = Post(userId: 1, id: 1, title: 'title', body: 'body');
       final deletePostCopy = deletePost.copyWith();
 
@@ -144,6 +152,8 @@ void main() {
     test('Post Manager get Test', () async {
       final repository = PostFileRepositoryImpl();
       final postManager = PostManager(repository);
+
+      await Future.delayed(Duration(seconds: 1));
 
       await postManager.addPost(Post(userId: 1, id: 1, title: 'title', body: 'body'));
       await postManager.addPost(Post(userId: 1, id: 2, title: 'title2', body: 'body2'));
