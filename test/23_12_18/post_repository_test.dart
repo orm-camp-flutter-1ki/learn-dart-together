@@ -22,7 +22,7 @@ class MockPostRepositoryImpl implements PostRepository {
   @override
   Future<List<Post>> getPosts() async {
     final jsonList = jsonDecode(fakePosts) as List<dynamic>;
-    return jsonList.map((e) => Post.fromMap(e)).toList();
+    return jsonList.map((e) => Post.fromJson(e)).toList();
   }
 
 }

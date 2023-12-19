@@ -11,6 +11,6 @@ class PostRepositoryImpl implements PostRepository {
     final response =
         await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
     final jsonList = jsonDecode(response.body) as List<dynamic>;
-    return jsonList.map((e) => Post.fromMap(e)).toList();
+    return jsonList.map((e) => Post.fromJson(e)).toList();
   }
 }

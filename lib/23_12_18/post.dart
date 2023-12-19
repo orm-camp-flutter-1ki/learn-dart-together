@@ -51,7 +51,7 @@ class Post {
     );
   }
 
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> toJson() {
     return {
       'userId': this.userId,
       'id': this.id,
@@ -60,7 +60,7 @@ class Post {
     };
   }
 
-  factory Post.fromMap(Map<String, dynamic> map) {
+  factory Post.fromJson(Map<String, dynamic> map) {
     return Post(
       userId: map['userId'] as int,
       id: map['id'] as int,
